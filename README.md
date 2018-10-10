@@ -97,5 +97,5 @@ The API was also manually tested using Postman - collection located in `tests/ap
 
 ## Personal note
 
-Since I had 4 days to deliver rather simple application, I decided to code it using technologies I had no longer experience with - TypeScript, TypeORM and tsoa.
+Since I had 4 days to deliver rather simple application, I decided to code it using technologies I had no former experience with - TypeScript, TypeORM and tsoa.
 Because of that, it's quite possible some solutions are far from ideal, I'll gladly share my motivations and discuss other approaches.
