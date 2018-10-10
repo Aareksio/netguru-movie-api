@@ -1,7 +1,6 @@
 ### netguru-movie-api
 
 ## Setup
-Development:
 ```
 git pull
 npm install
@@ -11,6 +10,7 @@ npm start
 Required environment variables:
 - TypeORM settings
 - `OMDBAPI_KEY` - api key for [omdbapi](http://www.omdbapi.com/)
+- `APP_PORT` - port on which the API should be exposed
 
 Example TypeORM settings:
 ```dotenv
