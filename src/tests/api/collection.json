@@ -1,0 +1,285 @@
+{
+	"info": {
+		"_postman_id": "cdbf2dd2-3cbf-4b33-a22b-98f295c4398b",
+		"name": "netguru-movie-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create comment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e8d5836a-41ff-4b3b-9e7e-964cba56c7de",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"text\": \"Test comment created from Postman\",\n\t\"movieId\": 7\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/comments",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"comments"
+					]
+				},
+				"description": "Create a comment"
+			},
+			"response": []
+		},
+		{
+			"name": "Create movie",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"Godfather\" \n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/movies",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"movies"
+					]
+				},
+				"description": "Create a movie"
+			},
+			"response": []
+		},
+		{
+			"name": "Load comments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseUrl}}/comments",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Load movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseUrl}}/movies",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"movies"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Guardians",
+							"disabled": true
+						},
+						{
+							"key": "year",
+							"value": "2011,2009",
+							"disabled": true
+						},
+						{
+							"key": "genre",
+							"value": "Drama",
+							"disabled": true
+						},
+						{
+							"key": "director",
+							"value": "Drew Maxwell",
+							"disabled": true
+						},
+						{
+							"key": "actor",
+							"value": "Chris Bell, Mukesh",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "start",
+							"value": "3",
+							"disabled": true
+						},
+						{
+							"key": "country",
+							"value": "USA",
+							"disabled": true
+						},
+						{
+							"key": "sortBy",
+							"value": "id",
+							"disabled": true
+						},
+						{
+							"key": "sortType",
+							"value": "DESC",
+							"disabled": true
+						},
+						{
+							"key": "comments",
+							"value": "true",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Load movie comments",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "fd64b89b-8bab-429e-bac5-073a37d50726",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseUrl}}/movies/:movieId/comments",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"movies",
+						":movieId",
+						"comments"
+					],
+					"variable": [
+						{
+							"key": "movieId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create movie comment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"text\": \"Test comment from movieController\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/movies/:movieId/comments",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"movies",
+						":movieId",
+						"comments"
+					],
+					"variable": [
+						{
+							"key": "movieId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "03561585-dd4e-4976-a40c-4792958515c1",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "9a78e542-c080-40d3-b0f3-a966cbff5c8f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "d189d994-97ba-41b4-8497-565b06134cdc",
+			"key": "baseUrl",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}

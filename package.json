@@ -1,0 +1,34 @@
+{
+  "name": "netguru-movie-api",
+  "version": "0.0.1",
+  "description": "Netguru recruitment task",
+  "devDependencies": {
+    "@types/chai": "^4.1.6",
+    "@types/chai-as-promised": "^7.1.0",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.11.5",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^5.2.0",
+    "sinon": "^6.3.5",
+    "ts-node": "3.3.0",
+    "typescript": "2.5.2"
+  },
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "got": "^9.2.2",
+    "koa": "^2.5.3",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "sqlite3": "^4.0.2",
+    "tsoa": "^2.2.0",
+    "typeorm": "0.2.7"
+  },
+  "scripts": {
+    "generate-routes": "tsoa routes",
+    "start": "ts-node src/index.ts",
+    "dev": "tsoa routes && ts-node src/index.ts",
+    "test": "mocha -r ts-node/register src/tests/**/*.spec.ts",
+    "generate-swagger": "tsoa swagger"
+  }
+}

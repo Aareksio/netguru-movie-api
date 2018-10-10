@@ -1,0 +1,648 @@
+{
+	"basePath": "/",
+	"consumes": [
+		"application/json"
+	],
+	"definitions": {
+		"Movie": {
+			"properties": {
+				"target": {
+					"type": "object",
+					"description": "Returns object that is managed by this repository.\nIf this repository manages entity from schema,\nthen it returns a name of that schema instead."
+				},
+				"id": {
+					"type": "number",
+					"format": "double"
+				},
+				"title": {
+					"type": "string"
+				},
+				"year": {
+					"type": "number",
+					"format": "double"
+				},
+				"rated": {
+					"type": "string"
+				},
+				"released": {
+					"type": "string"
+				},
+				"runtime": {
+					"type": "string"
+				},
+				"genres": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Genre"
+					}
+				},
+				"director": {
+					"$ref": "#/definitions/Director"
+				},
+				"writer": {
+					"type": "string"
+				},
+				"actors": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Actor"
+					}
+				},
+				"plot": {
+					"type": "string"
+				},
+				"language": {
+					"$ref": "#/definitions/Language"
+				},
+				"country": {
+					"type": "string"
+				},
+				"awards": {
+					"type": "string"
+				},
+				"poster": {
+					"type": "string"
+				},
+				"ratings": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Rating"
+					}
+				},
+				"metascore": {
+					"type": "string"
+				},
+				"imdbID": {
+					"type": "string"
+				},
+				"imdbRating": {
+					"type": "number",
+					"format": "double"
+				},
+				"imdbVotes": {
+					"type": "string"
+				},
+				"type": {
+					"$ref": "#/definitions/Type"
+				},
+				"dvd": {
+					"type": "string"
+				},
+				"boxOffice": {
+					"type": "string"
+				},
+				"production": {
+					"type": "string"
+				},
+				"website": {
+					"type": "string"
+				},
+				"comments": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Comment"
+					}
+				}
+			},
+			"required": [
+				"target",
+				"id",
+				"title",
+				"year",
+				"rated",
+				"released",
+				"runtime",
+				"genres",
+				"director",
+				"writer",
+				"actors",
+				"plot",
+				"language",
+				"country",
+				"awards",
+				"poster",
+				"ratings",
+				"metascore",
+				"imdbID",
+				"imdbRating",
+				"imdbVotes",
+				"type",
+				"dvd",
+				"boxOffice",
+				"production",
+				"website",
+				"comments"
+			],
+			"type": "object"
+		},
+		"Genre": {
+			"properties": {
+				"target": {
+					"type": "object",
+					"description": "Returns object that is managed by this repository.\nIf this repository manages entity from schema,\nthen it returns a name of that schema instead."
+				},
+				"id": {
+					"type": "number",
+					"format": "double"
+				},
+				"name": {
+					"type": "string"
+				},
+				"movies": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Movie"
+					}
+				}
+			},
+			"required": [
+				"target",
+				"id",
+				"name",
+				"movies"
+			],
+			"type": "object"
+		},
+		"Director": {
+			"properties": {
+				"target": {
+					"type": "object",
+					"description": "Returns object that is managed by this repository.\nIf this repository manages entity from schema,\nthen it returns a name of that schema instead."
+				},
+				"id": {
+					"type": "number",
+					"format": "double"
+				},
+				"name": {
+					"type": "string"
+				},
+				"movies": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Movie"
+					}
+				}
+			},
+			"required": [
+				"target",
+				"id",
+				"name",
+				"movies"
+			],
+			"type": "object"
+		},
+		"Actor": {
+			"properties": {
+				"target": {
+					"type": "object",
+					"description": "Returns object that is managed by this repository.\nIf this repository manages entity from schema,\nthen it returns a name of that schema instead."
+				},
+				"id": {
+					"type": "number",
+					"format": "double"
+				},
+				"name": {
+					"type": "string"
+				},
+				"movies": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Movie"
+					}
+				}
+			},
+			"required": [
+				"target",
+				"id",
+				"name",
+				"movies"
+			],
+			"type": "object"
+		},
+		"Language": {
+			"properties": {
+				"target": {
+					"type": "object",
+					"description": "Returns object that is managed by this repository.\nIf this repository manages entity from schema,\nthen it returns a name of that schema instead."
+				},
+				"id": {
+					"type": "number",
+					"format": "double"
+				},
+				"name": {
+					"type": "string"
+				},
+				"movies": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Movie"
+					}
+				}
+			},
+			"required": [
+				"target",
+				"id",
+				"name",
+				"movies"
+			],
+			"type": "object"
+		},
+		"Rating": {
+			"properties": {
+				"target": {
+					"type": "object",
+					"description": "Returns object that is managed by this repository.\nIf this repository manages entity from schema,\nthen it returns a name of that schema instead."
+				},
+				"source": {
+					"type": "string"
+				},
+				"value": {
+					"type": "string"
+				},
+				"movie": {
+					"$ref": "#/definitions/Movie"
+				}
+			},
+			"required": [
+				"target",
+				"source",
+				"value",
+				"movie"
+			],
+			"type": "object"
+		},
+		"Type": {
+			"properties": {
+				"target": {
+					"type": "object",
+					"description": "Returns object that is managed by this repository.\nIf this repository manages entity from schema,\nthen it returns a name of that schema instead."
+				},
+				"id": {
+					"type": "number",
+					"format": "double"
+				},
+				"name": {
+					"type": "string"
+				},
+				"movies": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Movie"
+					}
+				}
+			},
+			"required": [
+				"target",
+				"id",
+				"name",
+				"movies"
+			],
+			"type": "object"
+		},
+		"Comment": {
+			"properties": {
+				"target": {
+					"type": "object",
+					"description": "Returns object that is managed by this repository.\nIf this repository manages entity from schema,\nthen it returns a name of that schema instead."
+				},
+				"id": {
+					"type": "number",
+					"format": "double"
+				},
+				"text": {
+					"type": "string"
+				},
+				"movieId": {
+					"type": "number",
+					"format": "double"
+				},
+				"movie": {
+					"$ref": "#/definitions/Movie"
+				}
+			},
+			"required": [
+				"target",
+				"id",
+				"text",
+				"movieId",
+				"movie"
+			],
+			"type": "object"
+		},
+		"MovieSearchBody": {
+			"properties": {
+				"type": {
+					"type": "string",
+					"enum": [
+						"movie",
+						"series",
+						"episode"
+					],
+					"x-nullable": true
+				},
+				"year": {
+					"type": "number",
+					"format": "double",
+					"x-nullable": true
+				},
+				"id": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"title": {
+					"type": "string",
+					"x-nullable": true
+				}
+			},
+			"type": "object"
+		}
+	},
+	"info": {
+		"title": "netguru-movie-api",
+		"version": "0.0.1",
+		"description": "Netguru recruitment task"
+	},
+	"paths": {
+		"/comments": {
+			"get": {
+				"operationId": "GetComments",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Comment"
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "movieId",
+						"required": false,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "id",
+						"required": false,
+						"type": "string"
+					}
+				]
+			},
+			"post": {
+				"operationId": "CreateComment",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/Comment"
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"schema": {
+							"properties": {
+								"text": {
+									"type": "string"
+								},
+								"movieId": {
+									"type": "number",
+									"format": "double"
+								}
+							},
+							"title": "CreateCommentBody",
+							"type": "object",
+							"required": [
+								"text",
+								"movieId"
+							]
+						}
+					}
+				]
+			}
+		},
+		"/movies": {
+			"get": {
+				"operationId": "GetMovies",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Movie"
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "title",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "year",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "genre",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "director",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "actor",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "language",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "country",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "imdbID",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "type",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "limit",
+						"required": false,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "start",
+						"required": false,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "sortBy",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "sortType",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "comments",
+						"required": false,
+						"type": "boolean"
+					}
+				]
+			},
+			"post": {
+				"operationId": "CreateMovie",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/Movie"
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "movieSearchBody",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/MovieSearchBody"
+						}
+					}
+				]
+			}
+		},
+		"/movies/{id}/comments": {
+			"get": {
+				"operationId": "GetMovieComments",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Comment"
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					}
+				]
+			},
+			"post": {
+				"operationId": "CreateMovieComment",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/Comment"
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"schema": {
+							"properties": {
+								"text": {
+									"type": "string"
+								}
+							},
+							"title": "CreateMovieCommentBody",
+							"type": "object",
+							"required": [
+								"text"
+							]
+						}
+					}
+				]
+			}
+		}
+	},
+	"produces": [
+		"application/json"
+	],
+	"swagger": "2.0",
+	"securityDefinitions": {},
+	"host": "localhost:3000"
+}
