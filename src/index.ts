@@ -24,7 +24,8 @@ createConnection().then(async connection => {
     console.error(err);
   });
 
-  app.listen(3000);
+  const port = parseInt(process.env.APP_PORT || '3000', 10);
+  app.listen(port);
 
-  console.log(`Movie api running on port ${3000}`);
+  console.log(`Movie api running on port ${port}`);
 });
